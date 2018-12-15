@@ -1,16 +1,16 @@
 #!/bin/bash
 #---Number of cores
-#BSUB -n 1
-#BSUB –R "span[ptile=1]"
+#BSUB -n 4
+#BSUB –R "span[ptile=4]"
 
 #---Job's name in LSF system
-#BSUB -J afni
+#BSUB -J tedana_{seed}
 
 #---Error file
-#BSUB -eo errorfiles/afni
+#BSUB -eo errorfiles/tedana_{seed}
 
 #---Output file
-#BSUB -oo outfiles/afni
+#BSUB -oo outfiles/tedana_{seed}
 
 #---LSF Queue name
 #BSUB -q PQ_nbc
@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=$NPROCS
 
 ##########################################################
 ##########################################################
-source /home/data/nbc/data-analysis/bash_environment
+source /home/data/nbc/data-analysis/py3_environment
 
-python afni_preproc_step1.py
+python run_reliability_workflows.py {seed}
 

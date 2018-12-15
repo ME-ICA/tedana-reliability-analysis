@@ -36,7 +36,7 @@ def get_files():
             sub_info['echo_times'].append(metadata['EchoTime'])
         info[sub] = sub_info
 
-    with open('reliability_files.json', 'w') as fo:
+    with open('preproc_files.json', 'w') as fo:
         json.dump(info, fo, indent=4, sort_keys=True)
 
 

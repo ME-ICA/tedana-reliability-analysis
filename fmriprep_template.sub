@@ -1,0 +1,44 @@
+#!/bin/bash
+#---Number of cores
+#BSUB -n 8
+#BSUB -R "span[ptile=8]"
+
+#---Job's name in LSF system
+#BSUB -J {sub}
+
+#---Error file
+#BSUB -eo /home/tsalo006/tedana-reliability-analysis/errorfiles/sub-{sub}-fmriprep
+
+#---Output file
+#BSUB -oo /home/tsalo006/tedana-reliability-analysis/outfiles/sub-{sub}-fmriprep
+
+#---LSF Queue name
+#BSUB -q PQ_nbc
+
+##########################################################
+# Set up environmental variables.
+##########################################################
+export NPROCS=`echo $LSB_HOSTS | wc -w`
+export OMP_NUM_THREADS=$NPROCS
+
+. $MODULESHOME/../global/profile.modules
+module load singularity
+
+##########################################################
+##########################################################
+# Set variables
+# Clear Python path to prevent contamination
+PYTHONPATH=""
+
+# Run fMRIPrep
+# Data, image, and output directory must be in scratch directory.
+# Use nthreads/omp-nthreads configuration based on
+# https://neurostars.org/t/fmriprep-stopped-due-to-memory-error/2275/18
+singularity run /scratch/tsalo006/poldracklab_fmriprep_1.2.1-2018-11-01-3d4384853f74.img \
+    /scratch/tsalo006/ds001491 \
+    /scratch/tsalo006/ds001491/derivatives \
+    participant --participant_label {sub} \
+    --output-space T1w template --template-resampling-grid native \
+    --fs-license-file /scratch/tsalo006/freesurfer_license.txt \
+    --notrack --nthreads 1 --omp-nthreads $NPROCS \
+    -w /scratch/tsalo006/{work}
