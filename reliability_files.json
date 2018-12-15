@@ -1,0 +1,242 @@
+{
+    "01": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-01/func/sub-01_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-01/func/sub-01_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-01/func/sub-01_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "03": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-03/func/sub-03_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-03/func/sub-03_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-03/func/sub-03_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "04": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-04/func/sub-04_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-04/func/sub-04_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-04/func/sub-04_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "05": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-05/func/sub-05_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-05/func/sub-05_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-05/func/sub-05_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "06": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-06/func/sub-06_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-06/func/sub-06_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-06/func/sub-06_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "07": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-07/func/sub-07_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-07/func/sub-07_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-07/func/sub-07_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "08": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-08/func/sub-08_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-08/func/sub-08_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-08/func/sub-08_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "09": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-09/func/sub-09_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-09/func/sub-09_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-09/func/sub-09_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "10": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-10/func/sub-10_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-10/func/sub-10_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-10/func/sub-10_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "11": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-11/func/sub-11_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-11/func/sub-11_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-11/func/sub-11_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "12": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-12/func/sub-12_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-12/func/sub-12_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-12/func/sub-12_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "13": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-13/func/sub-13_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-13/func/sub-13_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-13/func/sub-13_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "14": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-14/func/sub-14_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-14/func/sub-14_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-14/func/sub-14_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "15": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-15/func/sub-15_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-15/func/sub-15_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-15/func/sub-15_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "16": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-16/func/sub-16_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-16/func/sub-16_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-16/func/sub-16_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "17": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-17/func/sub-17_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-17/func/sub-17_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-17/func/sub-17_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "18": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-18/func/sub-18_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-18/func/sub-18_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-18/func/sub-18_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "19": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-19/func/sub-19_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-19/func/sub-19_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-19/func/sub-19_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "20": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-20/func/sub-20_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-20/func/sub-20_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-20/func/sub-20_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }, 
+    "21": {
+        "echo_times": [
+            0.00802, 
+            0.02203, 
+            0.03603
+        ], 
+        "files": [
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-21/func/sub-21_task-images_echo-1_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-21/func/sub-21_task-images_echo-2_desc-realign_bold.nii.gz", 
+            "/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-21/func/sub-21_task-images_echo-3_desc-realign_bold.nii.gz"
+        ]
+    }
+}
