@@ -1,0 +1,69 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n033>
+Subject: Job 967309: <tedana_25> Done
+
+Job <tedana_25> was submitted from host <v002> by user <tsalo006> in cluster <panther>.
+Job was executed on host(s) <4*n033>, in queue <PQ_nbc>, as user <tsalo006> in cluster <panther>.
+</home/tsalo006> was used as the home directory.
+</home/tsalo006/tedana-comparison/code> was used as the working directory.
+Started at Tue Dec 11 08:31:45 2018
+Results reported at Tue Dec 11 22:51:26 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#---Number of cores
+#BSUB -n 4
+#BSUB –R "span[ptile=4]"
+
+#---Job's name in LSF system
+#BSUB -J tedana_25
+
+#---Error file
+#BSUB -eo errorfiles/tedana_25
+
+#---Output file
+#BSUB -oo outfiles/tedana_25
+
+#---LSF Queue name
+#BSUB -q PQ_nbc
+
+##########################################################
+# Set up environmental variables.
+##########################################################
+export NPROCS=`echo $LSB_HOSTS | wc -w`
+export OMP_NUM_THREADS=$NPROCS
+
+. $MODULESHOME/../global/profile.modules
+
+##########################################################
+##########################################################
+source /home/data/nbc/data-analysis/py3_environment
+
+python run_reliability_workflows.py 25
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   : 128568.99 sec.
+    Max Memory :      6864 MB
+    Max Swap   :      9300 MB
+
+    Max Processes  :         5
+    Max Threads    :        12
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <errorfiles/tedana_25> for stderr output of this job.
+

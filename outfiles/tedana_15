@@ -1,0 +1,70 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n010>
+Subject: Job 967299: <tedana_15> Exited
+
+Job <tedana_15> was submitted from host <v002> by user <tsalo006> in cluster <panther>.
+Job was executed on host(s) <4*n010>, in queue <PQ_nbc>, as user <tsalo006> in cluster <panther>.
+</home/tsalo006> was used as the home directory.
+</home/tsalo006/tedana-comparison/code> was used as the working directory.
+Started at Tue Dec 11 08:31:43 2018
+Results reported at Thu Dec 13 12:20:59 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#---Number of cores
+#BSUB -n 4
+#BSUB –R "span[ptile=4]"
+
+#---Job's name in LSF system
+#BSUB -J tedana_15
+
+#---Error file
+#BSUB -eo errorfiles/tedana_15
+
+#---Output file
+#BSUB -oo outfiles/tedana_15
+
+#---LSF Queue name
+#BSUB -q PQ_nbc
+
+##########################################################
+# Set up environmental variables.
+##########################################################
+export NPROCS=`echo $LSB_HOSTS | wc -w`
+export OMP_NUM_THREADS=$NPROCS
+
+. $MODULESHOME/../global/profile.modules
+
+##########################################################
+##########################################################
+source /home/data/nbc/data-analysis/py3_environment
+
+python run_reliability_workflows.py 15
+
+
+------------------------------------------------------------
+
+TERM_OWNER: job killed by owner.
+Exited with exit code 143.
+
+Resource usage summary:
+
+    CPU time   : 221060.00 sec.
+    Max Memory :      6868 MB
+    Max Swap   :      9299 MB
+
+    Max Processes  :         5
+    Max Threads    :        12
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <errorfiles/tedana_15> for stderr output of this job.
+

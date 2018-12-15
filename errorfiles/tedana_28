@@ -1,0 +1,697 @@
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/duecredit/utils.py:32: PendingDeprecationWarning: dist() and linux_distribution() functions are deprecated in Python 3.5
+  and platform.linux_distribution()[0] == 'debian' \
+/home/data/nbc/data-analysis/env3/lib/python3.6/importlib/_bootstrap.py:205: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/data/nbc/data-analysis/env3/lib/python3.6/importlib/_bootstrap.py:205: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+/home/data/nbc/data-analysis/env3/lib/python3.6/importlib/_bootstrap.py:205: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/data/nbc/data-analysis/env3/lib/python3.6/importlib/_bootstrap.py:205: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+/home/data/nbc/data-analysis/env3/lib/python3.6/importlib/_bootstrap.py:205: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-01/func/sub-01_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-01/func/sub-01_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-01/func/sub-01_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 493)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 34842/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 1023.21538
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1123.477 5617384.052
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 492 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 22
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-01/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-03/func/sub-03_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-03/func/sub-03_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-03/func/sub-03_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 458)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 37862/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 830.42637
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1134.788 5673940.758
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 457 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 23
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-03/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-04/func/sub-04_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-04/func/sub-04_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-04/func/sub-04_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 462)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 35798/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 887.81703
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1140.204 5701021.999
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 461 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 22
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-04/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-05/func/sub-05_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-05/func/sub-05_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-05/func/sub-05_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 491)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 39734/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 1309.57491
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 912.007 4560036.808
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 490 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 24
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-05/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-06/func/sub-06_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-06/func/sub-06_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-06/func/sub-06_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 478)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 33497/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 775.24798
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 945.706 4728528.758
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 477 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 21
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-06/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-07/func/sub-07_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-07/func/sub-07_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-07/func/sub-07_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 472)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 38070/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 785.93966
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1082.110 5410549.366
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 471 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 24
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-07/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-08/func/sub-08_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-08/func/sub-08_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-08/func/sub-08_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 451)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 34105/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 778.38081
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 828.783 4143912.697
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 450 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 22
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-08/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-09/func/sub-09_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-09/func/sub-09_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-09/func/sub-09_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 467)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 36963/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 980.77816
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1105.484 5527421.404
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 466 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 23
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-09/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-10/func/sub-10_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-10/func/sub-10_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-10/func/sub-10_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 437)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 38522/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 1066.29779
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1318.251 6591253.843
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 436 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 24
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-10/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-11/func/sub-11_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-11/func/sub-11_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-11/func/sub-11_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 451)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 36652/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 752.00850
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1065.350 5326748.982
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 450 components with MLE dimensionality detection
+WARNING:tedana.decomposition.eigendecomp:ICA failed to converge
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 23
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-11/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-12/func/sub-12_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-12/func/sub-12_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-12/func/sub-12_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 437)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 33632/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 1018.07707
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1080.040 5400201.441
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 436 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 21
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-12/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-13/func/sub-13_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-13/func/sub-13_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-13/func/sub-13_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 452)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 38564/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 899.00912
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1078.384 5391917.529
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 451 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 24
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-13/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-14/func/sub-14_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-14/func/sub-14_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-14/func/sub-14_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 469)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 34052/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 1079.25976
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1140.011 5700055.515
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 468 components with MLE dimensionality detection
+WARNING:tedana.decomposition.eigendecomp:ICA failed to converge
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 22
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-14/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-15/func/sub-15_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-15/func/sub-15_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-15/func/sub-15_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 442)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 34875/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 818.13889
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1020.872 5104359.425
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 441 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 22
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-15/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-16/func/sub-16_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-16/func/sub-16_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-16/func/sub-16_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 453)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 34599/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 818.85622
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1197.314 5986570.024
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 452 components with MLE dimensionality detection
+WARNING:tedana.decomposition.eigendecomp:ICA failed to converge
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 22
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-16/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-17/func/sub-17_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-17/func/sub-17_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-17/func/sub-17_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 439)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 29776/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 772.56004
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1098.064 5490321.144
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 438 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 20
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-17/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-18/func/sub-18_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-18/func/sub-18_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-18/func/sub-18_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 461)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 33466/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 798.20130
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 998.256 4991279.656
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 460 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 21
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-18/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-19/func/sub-19_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-19/func/sub-19_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-19/func/sub-19_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 468)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 36947/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 878.11495
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1032.913 5164563.436
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 467 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 23
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-19/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-20/func/sub-20_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-20/func/sub-20_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-20/func/sub-20_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 455)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 35445/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 1083.01288
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 1089.113 5445566.786
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 454 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 22
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-20/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/nibabel/nifti1.py:582: DeprecationWarning: The binary mode of fromstring is deprecated, as it behaves surprisingly on unicode inputs. Use frombuffer instead
+  ext_def = np.fromstring(ext_def, dtype=np.int32)
+INFO:tedana.workflows.tedana:Using output directory: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func
+INFO:tedana.workflows.tedana:Loading input data: ['/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-21/func/sub-21_task-images_echo-1_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-21/func/sub-21_task-images_echo-2_desc-realign_bold.nii.gz', '/home/data/nbc/external-datasets/ds001491/derivatives/afni-step1/sub-21/func/sub-21_task-images_echo-3_desc-realign_bold.nii.gz']
+DEBUG:tedana.workflows.tedana:Resulting data shape: (184320, 3, 441)
+INFO:tedana.workflows.tedana:Using user-defined mask
+DEBUG:tedana.workflows.tedana:Retaining 31358/184320 samples
+INFO:tedana.workflows.tedana:Computing T2* map
+DEBUG:tedana.workflows.tedana:Setting cap on T2* map at 726.62987
+INFO:tedana.combine:Optimally combining data with voxel-wise T2 estimates
+INFO:tedana.decomposition.eigendecomp:Computing PCA of optimally combined multi-echo data
+DEBUG:tedana.decomposition._utils:Creating eimask for echo 0
+DEBUG:tedana.decomposition._utils:Eimask threshold boundaries: 933.969 4669843.544
+INFO:tedana.decomposition.eigendecomp:Making initial component selection guess from PCA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.decomposition.eigendecomp:Saving PCA results to: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func/pcastate.pkl
+INFO:tedana.decomposition.eigendecomp:Selected 440 components with MLE dimensionality detection
+INFO:tedana.workflows.tedana:Making second component selection guess from ICA results
+INFO:tedana.model.fit:Fitting TE- and S0-dependent models to components
+INFO:tedana.model.fit:Performing spatial clustering of components
+DEBUG:tedana.model.fit:Using minimum cluster size: 20
+/home/data/nbc/data-analysis/env3/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+INFO:tedana.io:Writing optimally-combined time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func/ts_OC.nii
+INFO:tedana.io:Variance explained by ICA decomposition: 100.00%
+INFO:tedana.io:Writing high-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func/hik_ts_OC.nii
+INFO:tedana.io:Writing low-Kappa time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func/lowk_ts_OC.nii
+INFO:tedana.io:Writing denoised time series: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func/dn_ts_OC.nii
+INFO:tedana.io:Writing full ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func/betas_OC.nii
+INFO:tedana.io:Writing denoised ICA coefficient feature set: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func/betas_hik_OC.nii
+INFO:tedana.io:Writing Z-normalized spatial component maps: /home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func/feats_OC2.nii
+INFO:tedana.workflows.tedana:Workflow completed
+run_reliability_workflows.py:47: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/data/nbc/external-datasets/ds001491/derivatives/tedana_seed-028/sub-21/func/runlog.tsv' mode='a' encoding='UTF-8'>
+  mask=mask, out_dir=ted_dir, debug=True, gscontrol=None)
