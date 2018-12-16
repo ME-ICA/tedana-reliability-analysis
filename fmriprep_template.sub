@@ -34,7 +34,7 @@ PYTHONPATH=""
 # Data, image, and output directory must be in scratch directory.
 # Use nthreads/omp-nthreads configuration based on
 # https://neurostars.org/t/fmriprep-stopped-due-to-memory-error/2275/18
-singularity run /scratch/tsalo006/poldracklab_fmriprep_1.2.1-2018-11-01-3d4384853f74.img \
+singularity run /scratch/tsalo006/poldracklab_fmriprep_1.2.5-2018-12-04-c739710ca08f.img \
     /scratch/tsalo006/ds001491 \
     /scratch/tsalo006/ds001491/derivatives \
     participant --participant_label {sub} \
