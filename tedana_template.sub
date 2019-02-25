@@ -4,13 +4,13 @@
 #BSUB –R "span[ptile=4]"
 
 #---Job's name in LSF system
-#BSUB -J tedana_{seed}
+#BSUB -J tedana{dset}_{seed}
 
 #---Error file
-#BSUB -eo errorfiles/tedana_{seed}
+#BSUB -eo errorfiles/tedana_{dset}_{seed}
 
 #---Output file
-#BSUB -oo outfiles/tedana_{seed}
+#BSUB -oo outfiles/tedana_{dset}_{seed}
 
 #---LSF Queue name
 #BSUB -q PQ_nbc
@@ -27,5 +27,4 @@ export OMP_NUM_THREADS=$NPROCS
 ##########################################################
 source /home/data/nbc/data-analysis/py3_environment
 
-python run_reliability_workflows.py {seed}
-
+python run_tedana.py {dset} {seed}
