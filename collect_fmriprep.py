@@ -13,6 +13,9 @@ import nibabel as nib
 from nilearn import image
 from nipype.interfaces.ants import ApplyTransforms
 
+ORDER = ['_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5',
+         '_from-reference_to-T1w_mode-image_xfm.txt',
+         '_from-native_to-reference_mode-image_xfm.txt']
 XFORM_RENAME = {'bold_reg_wf/bbreg_wf/fsl2itk_fwd/affine.txt': '_from-reference_to-T1w_mode-image_xfm.txt',
                 'bold_hmc_wf/fsl2itk/mat2itk.txt': '_from-native_to-reference_mode-image_xfm.txt'}
 
@@ -70,11 +73,10 @@ def collect_fmriprep(deriv_dir, work_dir, subs):
             for in_xform in xform_rename2.keys():
                 copyfile(in_xform, xform_rename2[in_xform])
 
-            # And now to apply the transforms
-
 
 def split_4d(in_file, out_dir):
     """
+    Split 4D file into 3D files in out_dir
     """
     img_4d = nib.load(in_file)
     if not op.isdir(out_dir):
@@ -87,6 +89,22 @@ def split_4d(in_file, out_dir):
         out_files.append(out_file)
 
     return out_files
+
+
+def collect_xforms(in_file):
+    """
+    Collect transform files into list based on input file.
+    """
+    sub = [s for s in in_file.split('/') if s.startswith('sub-')][0]
+    sub_dir = in_file.split(sub)[0] + sub
+    anat_dir = op.join(sub_dir, 'anat')
+    func_dir = op.dirname(in_file)
+    echo_regex = re.compile('_echo-[0-9+]_')
+    ref_file = re.sub(echo_regex, '_', in_file)
+    t1_to_mni = glob(op.join(anat_dir, '*{0}'.format(ORDER[-1])))[0]
+    ref_to_t1 = 'i dunno'
+    nat_to_ref = 'i dunno'
+    return [t1_to_mni, ref_to_t1, nat_to_ref]
 
 
 def apply_xforms(in_file, out_file, xforms, temp_dir):
@@ -123,7 +141,7 @@ def apply_xforms(in_file, out_file, xforms, temp_dir):
         bold_to_mni_transform/tmp-h62vznik/mat2itk_pos-002_xfm-00000.txt
 
     Merge:
-    ???
+    nilearn
     """
     assert op.isfile(in_file)
     assert not op.isdir(temp_dir)
@@ -163,7 +181,7 @@ def apply_xforms(in_file, out_file, xforms, temp_dir):
     rmtree(temp_dir)
 
 
-if __name__ == '__init__':
+if __name__ == '__main__':
     deriv_dir = '/home/data/nbc/external-datasets/ltd_dset/derivatives/fmriprep/'
     work_dir = '/home/data/nbc/external-datasets/ltd_dset/derivatives/fmriprep-work/'
     subs = ['ltd']
