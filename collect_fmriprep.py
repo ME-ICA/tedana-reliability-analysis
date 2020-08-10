@@ -12,6 +12,8 @@ from shutil import copyfile, rmtree
 import nibabel as nib
 from nilearn import image
 from nipype.interfaces.ants import ApplyTransforms
+from niworkflows.interfaces.itk import MultiApplyTransforms
+from niworkflows.interfaces.nilearn import Merge
 
 ORDER = ['_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5',
          '_from-reference_to-T1w_mode-image_xfm.txt',
@@ -37,15 +39,46 @@ def collect_fmriprep(deriv_dir, work_dir, subs):
         sub_in_dir = op.join(work_dir, 'single_subject_{0}_wf'.format(sub))
         task_dirs = glob(op.join(sub_in_dir, 'func_preproc_task_*_wf'))
         for task_dir in task_dirs:
-            bb_wf_dir = op.join(task_dir, 'bold_bold_trans_wf')
-            bf_dirs = sorted(glob(op.join(bb_wf_dir, '_bold_file_*')))
+            # Check for SDC
+            sdc_wf_dir = op.join(task_dir, 'sdc_estimate_wf')
+            sdc = op.isfile(sdc_wf_dir)
+            if sdc:
+                bf_dirs = sorted(glob(op.join(task_dir, '_bold_file_*')))
+                ORDER.append('_fieldwarp_mode-image_xfm.nii.gz')
+                XFORM_RENAME[
+                    'sdc_estimate_wf/pepolar_unwarp_wf/cphdr_warp/_warpfieldQwarp_PLUS_WARP_fixhdr.nii.gz'] \
+                    = '_fieldwarp_mode-image_xfm.nii.gz'
+            else:
+                bb_wf_dir = op.join(task_dir, 'bold_bold_trans_wf')
+                bf_dirs = sorted(glob(op.join(bb_wf_dir, '_bold_file_*')))
             for bf_dir in bf_dirs:
                 # Collect partially preprocessed data
                 bf_dir_list = bf_dir.split('..')
                 idx = bf_dir_list.index('sub-{0}'.format(sub))
                 sub_deriv_dir = op.join(deriv_dir, op.dirname('/'.join(bf_dir_list[idx:])))
                 bf_filename = bf_dir_list[-1]
-                in_file = op.join(bf_dir, 'merge/vol0000_xform-00000_merged.nii.gz')
+                if sdc:
+                    temp_dir = op.join(deriv_dir, 'temp_dir')
+                    os.mkdir(temp_dir)
+                    os.chdir(temp_dir)
+                    split_files = sorted(glob(op.join(bf_dir, 'bold_split/vol*.nii.gz')))
+                    hmc_xforms = op.join(task_dir, 'bold_hmc_wf/fsl2itk/mat2itk.txt')
+
+                    bold_transform = MultiApplyTransforms(
+                        interpolation='LanczosWindowedSinc', float=True, copy_dtype=True, save_cmd=True)
+                    bold_transform.inputs.input_image = split_files
+                    bold_transform.inputs.transforms = hmc_xforms
+                    bold_transform.inputs.reference_image = split_files[0]
+                    bold_transform.run()
+
+                    files2merge = sorted(glob(op.join(temp_dir, 'vol*xform*.nii.gz')))
+                    merge = Merge(compress=True)
+                    merge.inputs.in_files = files2merge
+                    merge.run()
+
+                    in_file = op.join(temp_dir, 'vol0000_xform-00000_merged.nii.gz')
+                else:
+                    in_file = op.join(bf_dir, 'merge/vol0000_xform-00000_merged.nii.gz')
                 orig_fn_list = bf_filename.split('_')
                 fn_list = orig_fn_list[:]
                 fn_list.insert(-1, 'space-native')
