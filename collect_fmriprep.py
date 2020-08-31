@@ -4,6 +4,7 @@ copy into fMRIPrep derivatives directory, in BIDS format.
 """
 import gzip
 import pickle
+import os
 import os.path as op
 from os import mkdir
 from glob import glob
@@ -16,10 +17,11 @@ from niworkflows.interfaces.itk import MultiApplyTransforms
 from niworkflows.interfaces.nilearn import Merge
 
 ORDER = ['_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5',
-         '_from-reference_to-T1w_mode-image_xfm.txt',
-         '_from-native_to-reference_mode-image_xfm.txt']
-XFORM_RENAME = {'bold_reg_wf/bbreg_wf/fsl2itk_fwd/affine.txt': '_from-reference_to-T1w_mode-image_xfm.txt',
-                'bold_hmc_wf/fsl2itk/mat2itk.txt': '_from-native_to-reference_mode-image_xfm.txt'}
+         '_from-scanner_to-T1w_mode-image_xfm.txt']
+XFORM_RENAME = {'bold_reg_wf/bbreg_wf/fsl2itk_fwd/affine.txt': '_from-scanner_to-T1w_mode-image_xfm.txt',
+                'bold_reg_wf/bbreg_wf/fsl2itk_fwd/affine.txt': '_from-T1w_to-scanner_mode-image_xfm.txt',
+                'bold_reg_wf/bbreg_wf/concat_xfm/out_fwd.tfm': '_from-scanner_to-T1w_mode-image_xfm.txt',
+                'bold_reg_wf/bbreg_wf/concat_xfm/out_inv.tfm': '_from-T1w_to-scanner_mode-image_xfm.txt'}
 
 
 def collect_fmriprep(deriv_dir, work_dir, subs):
@@ -37,17 +39,17 @@ def collect_fmriprep(deriv_dir, work_dir, subs):
     for sub in subs:
         print('Wrangling subject {0}'.format(sub))
         sub_in_dir = op.join(work_dir, 'single_subject_{0}_wf'.format(sub))
-        task_dirs = glob(op.join(sub_in_dir, 'func_preproc_task_*_wf'))
+        task_dirs = glob(op.join(sub_in_dir, 'func_preproc*_task_*_wf'))
         for task_dir in task_dirs:
             # Check for SDC
             sdc_wf_dir = op.join(task_dir, 'sdc_estimate_wf')
-            sdc = op.isfile(sdc_wf_dir)
+            sdc = op.isdir(sdc_wf_dir)
             if sdc:
+                print('SDC was used')
                 bf_dirs = sorted(glob(op.join(task_dir, '_bold_file_*')))
                 ORDER.append('_fieldwarp_mode-image_xfm.nii.gz')
                 XFORM_RENAME[
-                    'sdc_estimate_wf/pepolar_unwarp_wf/cphdr_warp/_warpfieldQwarp_PLUS_WARP_fixhdr.nii.gz'] \
-                    = '_fieldwarp_mode-image_xfm.nii.gz'
+                    'sdc_estimate_wf/pepolar_unwarp_wf/cphdr_warp/_warpfieldQwarp_PLUS_WARP_fixhdr.nii.gz'] = '_fieldwarp_mode-image_xfm.nii.gz'
             else:
                 bb_wf_dir = op.join(task_dir, 'bold_bold_trans_wf')
                 bf_dirs = sorted(glob(op.join(bb_wf_dir, '_bold_file_*')))
@@ -55,14 +57,18 @@ def collect_fmriprep(deriv_dir, work_dir, subs):
                 # Collect partially preprocessed data
                 bf_dir_list = bf_dir.split('..')
                 idx = bf_dir_list.index('sub-{0}'.format(sub))
-                sub_deriv_dir = op.join(deriv_dir, op.dirname('/'.join(bf_dir_list[idx:])))
+                sub_deriv_dir = op.join(
+                    deriv_dir, op.dirname('/'.join(bf_dir_list[idx:])))
                 bf_filename = bf_dir_list[-1]
                 if sdc:
                     temp_dir = op.join(deriv_dir, 'temp_dir')
+                    rmtree(temp_dir)
                     os.mkdir(temp_dir)
                     os.chdir(temp_dir)
-                    split_files = sorted(glob(op.join(bf_dir, 'bold_split/vol*.nii.gz')))
-                    hmc_xforms = op.join(task_dir, 'bold_hmc_wf/fsl2itk/mat2itk.txt')
+                    split_files = sorted(
+                        glob(op.join(bf_dir, 'bold_split/vol*.nii.gz')))
+                    hmc_xforms = op.join(
+                        task_dir, 'bold_hmc_wf/fsl2itk/mat2itk.txt')
 
                     bold_transform = MultiApplyTransforms(
                         interpolation='LanczosWindowedSinc', float=True, copy_dtype=True, save_cmd=True)
@@ -71,40 +77,39 @@ def collect_fmriprep(deriv_dir, work_dir, subs):
                     bold_transform.inputs.reference_image = split_files[0]
                     bold_transform.run()
 
-                    files2merge = sorted(glob(op.join(temp_dir, 'vol*xform*.nii.gz')))
+                    files2merge = sorted(
+                        glob(op.join(temp_dir, 'vol*xform*.nii.gz')))
                     merge = Merge(compress=True)
                     merge.inputs.in_files = files2merge
                     merge.run()
 
-                    in_file = op.join(temp_dir, 'vol0000_xform-00000_merged.nii.gz')
+                    in_file = op.join(
+                        temp_dir, 'vol0000_xform-00000_merged.nii.gz')
                 else:
-                    in_file = op.join(bf_dir, 'merge/vol0000_xform-00000_merged.nii.gz')
+                    in_file = op.join(
+                        bf_dir, 'merge/vol0000_xform-00000_merged.nii.gz')
+                # Copy to derivatives dir
                 orig_fn_list = bf_filename.split('_')
                 fn_list = orig_fn_list[:]
-                fn_list.insert(-1, 'space-native')
+                fn_list.insert(-1, 'space-scanner')
                 fn_list.insert(-1, 'desc-partialPreproc')
                 out_file = op.join(sub_deriv_dir, '_'.join(fn_list))
+                print('Writting {0}'.format(out_file))
                 copyfile(in_file, out_file)
+                print(orig_fn_list)
 
-            # Collect native-to-T1w and T1w-to-MNI transforms
-            out_func_dir = op.dirname(out_file)
-            f = op.join(task_dir, 'bold_mni_trans_wf',
-                        'bold_to_mni_transform/_inputs.pklz')
-            with gzip.open(f, 'rb') as fo:
-                data = pickle.load(fo)
-
-            xform_rename2 = {}
-            orig_fn_list = [fn for fn in orig_fn_list if 'echo' not in fn]
-            orig_fn_list = orig_fn_list[:-1]
-            for xform in XFORM_RENAME.keys():
-                chosen = [xf for xf in data['transforms'] if xf.endswith(xform)]
-                assert len(chosen) == 1
-                chosen = chosen[0]
-                xform_fn = '_'.join(orig_fn_list) + XFORM_RENAME[xform]
-                xform_rename2[chosen] = op.join(out_func_dir, xform_fn)
-
-            for in_xform in xform_rename2.keys():
-                copyfile(in_xform, xform_rename2[in_xform])
+                # Collect scanner-to-T1w
+                # We won't need this part by fMRIPrep 20.2.0
+                out_func_dir = op.dirname(out_file)
+                orig_fn_list = [fn for fn in orig_fn_list if 'echo' not in fn]
+                orig_fn_list = orig_fn_list[:-1]
+                for xform in XFORM_RENAME.keys():
+                    chosen = op.join(task_dir, xform)
+                    xform_fn = '_'.join(orig_fn_list) + XFORM_RENAME[xform]
+                    xform_rename2 = op.join(out_func_dir, xform_fn)
+                    fs_xform = op.isfile(chosen)
+                    if fs_xform:
+                        copyfile(chosen, xform_rename2)
 
 
 def split_4d(in_file, out_dir):
@@ -199,7 +204,8 @@ def apply_xforms(in_file, out_file, xforms, temp_dir):
 
     temp_xformed_files = []
     for f in temp_files:
-        temp_xformed_file = op.join(temp_dir, 'xformed_{0}'.format(op.basename(f)))
+        temp_xformed_file = op.join(
+            temp_dir, 'xformed_{0}'.format(op.basename(f)))
         at.inputs.input_image = f
         at.inputs.output_image = temp_xformed_file
         at.run()
@@ -215,7 +221,8 @@ def apply_xforms(in_file, out_file, xforms, temp_dir):
 
 
 if __name__ == '__main__':
-    deriv_dir = '/home/data/nbc/external-datasets/ltd_dset/derivatives/fmriprep/'
-    work_dir = '/home/data/nbc/external-datasets/ltd_dset/derivatives/fmriprep-work/'
-    subs = ['ltd']
+    # Using ds002156 for testing SDC
+    deriv_dir = '/Users/jperaza/Documents/Data/ds002156/derivatives/fmriprep-20.1.1/fmriprep'
+    work_dir = '/Users/jperaza/Documents/Data/scratch/ds002156/fmriprep-20.1.1/fmriprep_wf'
+    subs = ['23638']
     collect_fmriprep(deriv_dir, work_dir, subs)
